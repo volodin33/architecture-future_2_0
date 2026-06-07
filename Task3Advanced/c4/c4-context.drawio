@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="C4-Context" id="c4-ctx">
+    <mxGraphModel dx="1366" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;align=left;" value="C4 Context — целевое состояние «Будущее 2.0»&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="employee" parent="1" style="shape=mxgraph.c4.person2;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#ffffff;whiteSpace=wrap;" value="Сотрудник домена&#xa;[Person]&#xa;Аналитик, врач, фин. оператор" vertex="1">
+          <mxGeometry height="140" width="120" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dpo" parent="1" style="shape=mxgraph.c4.person2;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#ffffff;whiteSpace=wrap;" value="Data Product Owner / Engineer&#xa;[Person]&#xa;Создаёт дата-продукты" vertex="1">
+          <mxGeometry height="140" width="120" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;arcSize=4;fillColor=none;strokeColor=#444444;fontColor=#333333;verticalAlign=top;fontStyle=1;fontSize=14;" value="Платформа данных «Будущее 2.0»" vertex="1">
+          <mxGeometry height="380" width="540" x="320" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="core" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Событийная платформа + Data Mesh + Self-service BI&#xa;[Система]&#xa;Домены взаимодействуют через события; портал самообслуживания" vertex="1">
+          <mxGeometry height="150" width="420" x="380" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#6B6B6B;fontColor=#ffffff;arcSize=8;" value="Легаси-системы&#xa;[Внешняя система]&#xa;DWH (SQL Server) + ESB (Camel)" vertex="1">
+          <mxGeometry height="90" width="260" x="980" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="reg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#6B6B6B;fontColor=#ffffff;arcSize=8;" value="Регуляторы&#xa;[Внешняя система]&#xa;Мед. и фин. надзор" vertex="1">
+          <mxGeometry height="90" width="260" x="980" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="partners" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#6B6B6B;fontColor=#ffffff;arcSize=8;" value="Внешние партнёры&#xa;[Внешняя система]&#xa;Банк, фарма, электроника" vertex="1">
+          <mxGeometry height="90" width="260" x="980" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" source="employee" style="endArrow=block;html=1;fontSize=10;" target="core" value="Строит и смотрит отчёты (HTTPS/TLS)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" source="dpo" style="endArrow=block;html=1;fontSize=10;" target="core" value="Публикует дата-продукты (HTTPS)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" edge="1" parent="1" source="core" style="endArrow=block;startArrow=block;html=1;fontSize=10;dashed=1;" target="legacy" value="Мосты совместимости (CDC/адаптеры)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" edge="1" parent="1" source="core" style="endArrow=block;html=1;fontSize=10;" target="reg" value="Отчётность для аудита (экспорт)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" edge="1" parent="1" source="partners" style="endArrow=block;html=1;fontSize=10;" target="core" value="События новых направлений (Kafka)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,76 @@
+pipeline {
+    agent any
+
+    environment {
+        TF_IMAGE   = 'hashicorp/terraform:latest'
+        TF_NETWORK = 'task2-tf-net'
+        AWS_ACCESS_KEY_ID     = "${env.MINIO_ROOT_USER ?: 'minioadmin'}"
+        AWS_SECRET_ACCESS_KEY = "${env.MINIO_ROOT_PASSWORD ?: 'minioadmin'}"
+    }
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+    }
+
+    stages {
+        stage('Format check') {
+            steps {
+                sh '''
+                    docker run --rm --network "$TF_NETWORK" \
+                      -v "$HOST_PROJECT_DIR":/work -w /work \
+                      "$TF_IMAGE" fmt -check -recursive
+                '''
+            }
+        }
+
+        stage('Init') {
+            steps {
+                sh '''
+                    docker run --rm --network "$TF_NETWORK" \
+                      -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY \
+                      -v "$HOST_PROJECT_DIR":/work -w /work \
+                      "$TF_IMAGE" init -input=false -backend-config=backend.tfvars
+                '''
+            }
+        }
+
+        stage('Validate') {
+            steps {
+                sh '''
+                    docker run --rm --network "$TF_NETWORK" \
+                      -v "$HOST_PROJECT_DIR":/work -w /work \
+                      "$TF_IMAGE" validate
+                '''
+            }
+        }
+
+        stage('Plan') {
+            steps {
+                sh '''
+                    docker run --rm --network "$TF_NETWORK" \
+                      -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY \
+                      -v "$HOST_PROJECT_DIR":/work -w /work \
+                      "$TF_IMAGE" plan -input=false -out=tfplan
+                '''
+            }
+        }
+
+        stage('Approval') {
+            steps {
+                input message: 'Применить изменения (terraform apply)?', ok: 'Apply'
+            }
+        }
+
+        stage('Apply') {
+            steps {
+                sh '''
+                    docker run --rm --network "$TF_NETWORK" \
+                      -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY \
+                      -v "$HOST_PROJECT_DIR":/work -w /work \
+                      "$TF_IMAGE" apply -input=false tfplan
+                '''
+            }
+        }
+    }
+}

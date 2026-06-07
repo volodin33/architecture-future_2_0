@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="C4-Containers" id="c4-cont">
+    <mxGraphModel dx="1518" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;align=left;" value="C4 Containers — Платформа данных «Будущее 2.0»" vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="shape=mxgraph.c4.person2;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#ffffff;whiteSpace=wrap;" value="Сотрудник домена&#xa;[Person]" vertex="1">
+          <mxGeometry height="140" width="120" x="80" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;arcSize=4;fillColor=none;strokeColor=#444444;fontColor=#333333;verticalAlign=top;fontStyle=1;fontSize=14;" value="Платформа данных «Будущее 2.0»" vertex="1">
+          <mxGeometry height="635" width="900" x="280" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="fintech" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Финтех-сервисы&#xa;[Container: Go/Java]&#xa;Кредиты, счета, платежи" vertex="1">
+          <mxGeometry height="90" width="230" x="340" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="patient" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Сервисы клиник&#xa;[Container: Java]&#xa;Пациентский поток" vertex="1">
+          <mxGeometry height="90" width="230" x="340" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="ИИ-сервисы&#xa;[Container: Python]&#xa;Анализ исследований" vertex="1">
+          <mxGeometry height="90" width="230" x="340" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="hq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Сервис корп. отчётности&#xa;[Container]&#xa;Головной офис" vertex="1">
+          <mxGeometry height="90" width="230" x="340" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="broker" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;boundedLbl=1;backgroundOutline=1;size=12;" value="Брокер событий&#xa;[Container: Apache Kafka]&#xa;Транспорт доменных событий" vertex="1">
+          <mxGeometry height="130" width="260" x="880" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="schema" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Schema Registry&#xa;[Container]&#xa;Контракты событий" vertex="1">
+          <mxGeometry height="90" width="125" x="830" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dlq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="DLQ&#xa;[Container: Kafka topic]&#xa;Ошибки доставки" vertex="1">
+          <mxGeometry height="90" width="125" x="1040" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="lake" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;boundedLbl=1;backgroundOutline=1;size=12;" value="Data Lakehouse&#xa;[Container: S3 + table format]&#xa;Хранение и аналит. таблицы" vertex="1">
+          <mxGeometry height="120" width="260" x="880" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="bi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Портал самообслуживания&#xa;[Container: Self-service BI]&#xa;Конструктор отчётов" vertex="1">
+          <mxGeometry height="90" width="280" x="470" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="acl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#ffffff;arcSize=8;" value="Антикоррупционный слой (ACL)&#xa;[Подсистема]&#xa;Изоляция легаси" vertex="1">
+          <mxGeometry height="90" width="280" x="1290" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#6B6B6B;fontColor=#ffffff;arcSize=8;" value="Легаси&#xa;[Внешняя система]&#xa;DWH (SQL Server) + ESB (Camel)" vertex="1">
+          <mxGeometry height="90" width="280" x="700" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" source="fintech" style="endArrow=block;html=1;fontSize=10;" target="broker" value="Публикуют события (Kafka)">
+          <mxGeometry relative="1" x="-0.015" y="21" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" source="patient" style="endArrow=block;html=1;fontSize=10;" target="broker" value="(Kafka)">
+          <mxGeometry relative="1" x="-0.0374" y="9" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3" edge="1" parent="1" source="ai" style="endArrow=block;html=1;fontSize=10;" target="broker" value="(Kafka)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" edge="1" parent="1" source="broker" style="endArrow=block;html=1;fontSize=10;" target="hq" value="Подписан (Kafka)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r5" edge="1" parent="1" source="broker" style="endArrow=block;html=1;fontSize=10;" target="schema" value="Валидирует схему">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" edge="1" parent="1" source="broker" style="endArrow=block;html=1;fontSize=10;" target="dlq" value="Ошибки">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" edge="1" parent="1" source="broker" style="endArrow=block;html=1;fontSize=10;" target="lake" value="Потоковая загрузка (Kafka Connect)">
+          <mxGeometry relative="1" x="0.7049" y="10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r8" edge="1" parent="1" source="bi" style="endArrow=block;html=1;fontSize=10;" target="lake" value="Запросы (SQL)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r9" edge="1" parent="1" source="user" style="endArrow=block;html=1;fontSize=10;" target="bi" value="Конструирует отчёты (HTTPS)">
+          <mxGeometry relative="1" x="-0.037" y="25" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r10" edge="1" parent="1" source="acl" style="endArrow=block;html=1;fontSize=10;dashed=1;" target="broker" value="Публикует через ACL (Kafka)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1270" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r11" edge="1" parent="1" source="acl" style="endArrow=block;html=1;fontSize=10;dashed=1;startArrow=block;" target="legacy" value="Читает (CDC/JDBC)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1260" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

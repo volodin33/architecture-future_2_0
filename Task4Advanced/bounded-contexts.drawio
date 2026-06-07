@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Bounded-Contexts" id="bc">
+    <mxGraphModel dx="1438" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;align=left;" value="Bounded Contexts и Context Map — «Будущее 2.0»" vertex="1">
+          <mxGeometry height="30" width="800" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="employee" parent="1" style="shape=mxgraph.c4.person2;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#ffffff;whiteSpace=wrap;" value="Сотрудник домена&#xa;[Person]&#xa;Аналитик, врач, фин. оператор" vertex="1">
+          <mxGeometry height="140" width="120" x="60" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="dpo" parent="1" style="shape=mxgraph.c4.person2;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#ffffff;whiteSpace=wrap;" value="Data Product Owner&#xa;[Person]&#xa;Владеет дата-продукты" vertex="1">
+          <mxGeometry height="140" width="120" x="60" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;arcSize=4;fillColor=none;strokeColor=#444444;fontColor=#333333;verticalAlign=top;fontStyle=1;fontSize=14;" value="Платформа «Будущее 2.0»" vertex="1">
+          <mxGeometry height="700" width="850" x="300" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fintech" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Финтех&#xa;[Bounded Context]&#xa;Кредиты, счета, платежи" vertex="1">
+          <mxGeometry height="90" width="250" x="460" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="patient" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Пациентский поток&#xa;[Bounded Context]&#xa;Регистрация, приём" vertex="1">
+          <mxGeometry height="90" width="250" x="880" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="ИИ-сервисы&#xa;[Bounded Context]&#xa;Анализ исследований" vertex="1">
+          <mxGeometry height="90" width="250" x="800" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Аналитика / Self-service BI&#xa;[Bounded Context]&#xa;Витрины, отчёты" vertex="1">
+          <mxGeometry height="90" width="250" x="460" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="hq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;" value="Головной офис&#xa;[Bounded Context]&#xa;Корпоративная отчётность" vertex="1">
+          <mxGeometry height="90" width="250" x="460" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="acl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#ffffff;arcSize=8;" value="ACL&#xa;[Подсистема]&#xa;Изолирующий слой — изоляция легаси" vertex="1">
+          <mxGeometry height="90" width="250" x="460" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="future" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#ffffff;arcSize=8;dashed=1;opacity=70;" value="Фарма, Электроника&#xa;[Bounded Context — финал]&#xa;Перспективные домены" vertex="1">
+          <mxGeometry height="90" width="250" x="880" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#6B6B6B;fontColor=#ffffff;arcSize=8;" value="Легаси&#xa;[Внешняя система]&#xa;DWH (SQL Server) + ESB (Camel)" vertex="1">
+          <mxGeometry height="90" width="240" x="40" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="employee" style="endArrow=block;html=1;fontSize=10;" target="analytics" value="Работают с данными">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="dpo" style="endArrow=block;html=1;fontSize=10;" target="acl" value="Создаёт дата-продукты">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="patient" style="endArrow=block;html=1;fontSize=10;" target="fintech" value="Событие пациента (PL)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="ai" style="endArrow=block;html=1;fontSize=10;" target="patient" value="Результат ИИ (PL)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="fintech" style="endArrow=block;html=1;fontSize=10;" target="analytics" value="События доменов (PL)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="patient" style="endArrow=block;html=1;fontSize=10;" target="analytics" value="События доменов (PL)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="analytics" style="endArrow=block;html=1;fontSize=10;" target="hq" value="Агрегаты для отчётов">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="acl" style="endArrow=block;html=1;fontSize=10;startArrow=block;dashed=1;" target="legacy" value="Читает на миграции (CDC/JDBC)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="acl" style="endArrow=block;html=1;fontSize=10;" target="fintech" value="Данные легаси → события (PL)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="tech-radar" name="Tech Radar">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="780" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Расширенный технический радар — «Будущее 2.0»" style="text;html=1;fontSize=14;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Кольца -->
+        <mxCell id="ring4" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;" vertex="1" parent="1"><mxGeometry x="100" y="120" width="600" height="600" as="geometry" /></mxCell>
+        <mxCell id="ring3" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;" vertex="1" parent="1"><mxGeometry x="175" y="195" width="450" height="450" as="geometry" /></mxCell>
+        <mxCell id="ring2" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#cccccc;" vertex="1" parent="1"><mxGeometry x="250" y="270" width="300" height="300" as="geometry" /></mxCell>
+        <mxCell id="ring1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dddddd;strokeColor=#cccccc;" vertex="1" parent="1"><mxGeometry x="325" y="345" width="150" height="150" as="geometry" /></mxCell>
+
+        <mxCell id="rl1" value="Adopt" style="text;html=1;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="360" y="405" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="rl2" value="Trial" style="text;html=1;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="360" y="300" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="rl3" value="Assess" style="text;html=1;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="360" y="225" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="rl4" value="Hold" style="text;html=1;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="360" y="150" width="80" height="20" as="geometry" /></mxCell>
+
+        <!-- Оси квадрантов -->
+        <mxCell id="axisV" value="" style="endArrow=none;html=1;strokeColor=#999999;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="400" y="120" as="sourcePoint" /><mxPoint x="400" y="720" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="axisH" value="" style="endArrow=none;html=1;strokeColor=#999999;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="100" y="420" as="sourcePoint" /><mxPoint x="700" y="420" as="targetPoint" /></mxGeometry></mxCell>
+
+        <mxCell id="q1" value="Паттерны" style="text;html=1;fontStyle=1;align=center;fontColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="180" y="130" width="120" height="20" as="geometry" /></mxCell>
+        <mxCell id="q2" value="Платформы" style="text;html=1;fontStyle=1;align=center;fontColor=#82b366;" vertex="1" parent="1"><mxGeometry x="500" y="130" width="120" height="20" as="geometry" /></mxCell>
+        <mxCell id="q3" value="Инструменты" style="text;html=1;fontStyle=1;align=center;fontColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="180" y="690" width="120" height="20" as="geometry" /></mxCell>
+        <mxCell id="q4" value="Языки и фреймворки" style="text;html=1;fontStyle=1;align=center;fontColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="480" y="690" width="160" height="20" as="geometry" /></mxCell>
+
+        <!-- Точки: паттерны (верх-лево) -->
+        <mxCell id="p_dm" value="Data Mesh (Trial)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1"><mxGeometry x="300" y="310" width="100" height="40" as="geometry" /></mxCell>
+        <mxCell id="p_eda" value="Event-Driven (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1"><mxGeometry x="320" y="380" width="80" height="40" as="geometry" /></mxCell>
+        <mxCell id="p_bi" value="Self-service BI (Trial)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1"><mxGeometry x="220" y="300" width="90" height="40" as="geometry" /></mxCell>
+        <mxCell id="p_acl" value="ACL (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1"><mxGeometry x="250" y="360" width="70" height="40" as="geometry" /></mxCell>
+        <mxCell id="p_lake" value="Data Lakehouse (Trial)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="1"><mxGeometry x="200" y="240" width="90" height="40" as="geometry" /></mxCell>
+
+        <!-- Платформы (верх-право) -->
+        <mxCell id="pl_kafka" value="Apache Kafka (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1"><mxGeometry x="420" y="370" width="90" height="40" as="geometry" /></mxCell>
+        <mxCell id="pl_s3" value="S3 хранилище (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1"><mxGeometry x="430" y="320" width="100" height="40" as="geometry" /></mxCell>
+        <mxCell id="pl_sr" value="Schema Registry (Trial)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1"><mxGeometry x="500" y="290" width="100" height="40" as="geometry" /></mxCell>
+        <mxCell id="pl_cloud" value="Облако (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1"><mxGeometry x="410" y="430" width="90" height="40" as="geometry" /></mxCell>
+
+        <!-- Инструменты (низ-лево) -->
+        <mxCell id="t_tf" value="Terraform (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1"><mxGeometry x="300" y="430" width="90" height="40" as="geometry" /></mxCell>
+        <mxCell id="t_cdc" value="CDC (Trial)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1"><mxGeometry x="250" y="470" width="80" height="40" as="geometry" /></mxCell>
+        <mxCell id="t_pbi" value="Power BI (Hold)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1"><mxGeometry x="150" y="540" width="90" height="40" as="geometry" /></mxCell>
+        <mxCell id="t_camel" value="Apache Camel (Hold)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="1"><mxGeometry x="180" y="600" width="100" height="40" as="geometry" /></mxCell>
+
+        <!-- Языки/фреймворки (низ-право) -->
+        <mxCell id="l_go" value="Go/Java (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1"><mxGeometry x="420" y="430" width="80" height="40" as="geometry" /></mxCell>
+        <mxCell id="l_py" value="Python (Adopt)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1"><mxGeometry x="470" y="480" width="80" height="40" as="geometry" /></mxCell>
+        <mxCell id="l_sql" value="SQL Server 2008 (Hold)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="1"><mxGeometry x="520" y="560" width="110" height="40" as="geometry" /></mxCell>
+        <mxCell id="l_pb" value="PowerBuilder (Hold)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="1"><mxGeometry x="560" y="610" width="100" height="40" as="geometry" /></mxCell>
+
+        <mxCell id="legend" value="Кольца: Adopt → Trial → Assess → Hold (от центра к краю). Красным — легаси на вывод. Подробности: tco-analysis.md, roadmap.md" style="text;html=1;align=left;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="100" y="735" width="700" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
